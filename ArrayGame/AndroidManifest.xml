@@ -19,13 +19,18 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".Splash"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_about_us" >
         </activity>
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
@@ -37,8 +42,9 @@
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
-        <service  android:name=".serv"></service>
-        
+        <service android:name=".serv" >
+        </service>
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
@@ -55,7 +61,6 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        
         <activity
             android:name=".AboutUs"
             android:label="@string/title_activity_about_us" >
