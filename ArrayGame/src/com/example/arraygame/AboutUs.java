@@ -17,6 +17,8 @@ public class AboutUs extends Activity {
         
         btn.setOnClickListener(new OnClickListener() {
 			
+        	
+        	//nishaant shah
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
