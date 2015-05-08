@@ -76,6 +76,7 @@ import com.special.ResideMenu.ResideMenu;
 import com.special.ResideMenu.ResideMenuItem;
 import com.squareup.picasso.Picasso;
 
+@SuppressLint("NewApi")
 public class MainActivity extends Activity implements OnClickListener {
 
 	@Override
@@ -182,7 +183,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	static int posted = 0;
 
-	@SuppressLint("InlinedApi") @Override
+	@SuppressLint({ "InlinedApi", "NewApi" }) @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
@@ -731,7 +732,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			}
 
 			if (level == 88) {
-				Intent intentx = new Intent(MainActivity.this, AboutUs.class);
+				Intent intentx = new Intent(MainActivity.this, LastScreen.class);
 				startActivity(intentx);
 				finish();
 			}

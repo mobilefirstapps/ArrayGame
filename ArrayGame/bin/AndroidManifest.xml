@@ -20,8 +20,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".Splash"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -65,7 +65,11 @@
             android:name=".AboutUs"
             android:label="@string/title_activity_about_us" >
         </activity>
-        <activity android:name="com.example.arraygame.AdsActivity" >
+        <activity android:name=".AdsActivity" >
+        </activity>
+        <activity
+            android:name=".LastScreen"
+            android:label="@string/title_activity_last_screen" >
         </activity>
     </application>
 

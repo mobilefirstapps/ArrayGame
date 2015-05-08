@@ -2,6 +2,7 @@ package com.example.arraygame;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -49,6 +50,18 @@ public class Splash extends Activity {
 
 			@Override
 			public void onAnimationStart(Animation animation) {
+				
+				new Handler().postDelayed(new Runnable() {
+
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						final MediaPlayer mp2 = MediaPlayer.create(Splash.this,
+								R.raw.swordcut);
+						mp2.start();
+					}
+				}, 1000);
+				
 			}
 
 			@Override
