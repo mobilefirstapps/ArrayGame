@@ -19,5 +19,5 @@
     <color name="LtdCyan">#2aa198</color>
     <color name="LtdGreen">#2aa15d</color>
     <color name="LtdBlue">#2867f3</color>
-
+<color name="white_trans">#80FFFFFF</color>
 </resources>

@@ -8,11 +8,11 @@ package io.doorbell.android;
 
 public final class R {
 	public static final class string {
-		public static final int doorbell_cancel = 0x7f060038;
-		public static final int doorbell_email_hint = 0x7f060036;
-		public static final int doorbell_message_hint = 0x7f060035;
-		public static final int doorbell_send = 0x7f060037;
-		public static final int doorbell_sending = 0x7f060039;
-		public static final int doorbell_title = 0x7f060034;
+		public static final int doorbell_cancel = 0x7f060039;
+		public static final int doorbell_email_hint = 0x7f060037;
+		public static final int doorbell_message_hint = 0x7f060036;
+		public static final int doorbell_send = 0x7f060038;
+		public static final int doorbell_sending = 0x7f06003a;
+		public static final int doorbell_title = 0x7f060035;
 	}
 }

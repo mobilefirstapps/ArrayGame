@@ -84,8 +84,18 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.onResume();
 		// Logs 'install' and 'app activate' App Events.
 		AppEventsLogger.activateApp(this);
-		Intent intentx = new Intent(MainActivity.this, serv.class);
-		MainActivity.this.startService(intentx);
+		
+		if(GlobalThings.music)
+		{
+			Intent intentx = new Intent(MainActivity.this, serv.class);
+			MainActivity.this.startService(intentx);
+		}
+		else
+		{
+			Intent intentx = new Intent(MainActivity.this, serv.class);
+			MainActivity.this.stopService(intentx);
+		}
+		
 	}
 
 	@Override
@@ -113,10 +123,11 @@ public class MainActivity extends Activity implements OnClickListener {
 	List<String> list2;
 	int count = 0;
 	int spacecount = 0;
+	ImageView volume;
 	int[] mydraw = { R.drawable.black_gradiant_bg };
 	String titles[] = { "About Us", "Feedback", "share" };
 	String share[] = { "Twitter", "Whatsapp", "Facebook" };
-	int icon[] = { R.drawable.about, R.drawable.feedback, R.drawable.twitter };
+	int icon[] = { R.drawable.about, R.drawable.feedback, R.drawable.share };
 	int shareicon[] = { R.drawable.twitter, R.drawable.whatsapp, R.drawable.fb };
 	RelativeLayout mLinearLayout;
 	List<EasyBean> mMasterArray;
@@ -250,15 +261,29 @@ public class MainActivity extends Activity implements OnClickListener {
 		ans2 = (LinearLayout) findViewById(R.id.ansrow2);
 		que1 = (LinearLayout) findViewById(R.id.quesrow1);
 		que2 = (LinearLayout) findViewById(R.id.quesrow2);
+		volume = (ImageView) findViewById(R.id.volume);
+		shared = MainActivity.this.getSharedPreferences("game",
+				Context.MODE_PRIVATE);
+		editor = shared.edit();
+		
+		if(shared.getBoolean("volume", true))
+		{
+			GlobalThings.music=true;
+			volume.setImageResource(R.drawable.volumeon);
+		}
+		else
+		{			GlobalThings.music=false;
+
+			volume.setImageResource(R.drawable.volumeoff);
+		}
+		
 		smallTextSize = (int) getResources().getDimension(
 				R.dimen.quote_small_size);
 		quoteTextSize = (int) getResources().getDimension(
 				R.dimen.quote_text_size);
 		mLinearLayout = (RelativeLayout) findViewById(R.id.background);
 		mMasterArray = new ArrayList<EasyBean>();
-		shared = MainActivity.this.getSharedPreferences("game",
-				Context.MODE_PRIVATE);
-		editor = shared.edit();
+		
 		menu = (ImageView) findViewById(R.id.expanded_menu);
 		image = (ImageView) findViewById(R.id.image);
 		loading = (ImageView) findViewById(R.id.loading);
@@ -317,6 +342,35 @@ public class MainActivity extends Activity implements OnClickListener {
 		});
 
 		levelchanger();
+		
+		
+		volume.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				if(GlobalThings.music)
+				{
+					volume.setImageResource(R.drawable.volumeoff);
+					GlobalThings.music =false;
+					editor.putBoolean("volume", GlobalThings.music);
+					editor.commit();
+					Intent intentx = new Intent(MainActivity.this, serv.class);
+					MainActivity.this.stopService(intentx);
+				}
+				else
+				{
+					volume.setImageResource(R.drawable.volumeon);
+					Intent intentx = new Intent(MainActivity.this, serv.class);
+					MainActivity.this.startService(intentx);
+					GlobalThings.music =true;
+					editor.putBoolean("volume", GlobalThings.music);
+					editor.commit();
+				}
+				
+			}
+		});
 
 		mHint.setOnClickListener(new OnClickListener() {
 
@@ -673,8 +727,18 @@ public class MainActivity extends Activity implements OnClickListener {
 		isOnline();
 
 		if (isInternetPresent) {
-			Intent intent = new Intent(MainActivity.this, serv.class);
-			MainActivity.this.startService(intent);
+			
+			if(shared.getBoolean("volume", true))
+			{
+				Intent intent = new Intent(MainActivity.this, serv.class);
+				MainActivity.this.startService(intent);
+			}
+			else
+			{
+				Intent intent = new Intent(MainActivity.this, serv.class);
+				MainActivity.this.stopService(intent);
+			}
+			
 
 			int mSpacecounter = 0;
 			mHint.setEnabled(true);
@@ -985,9 +1049,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				doorbellDialog.show();
 				break;
 			case 302:
-				String txtLuv = "Loving @mobilefirstinc's "
-						+ getResources().getString(R.string.app_name)
-						+ " app on Android. http://wanna.mobilefirst.in/ #awesomeness";
+				String txtLuv = "GOT fan?? You know nothing Challenge a Quiz of GOT http://kyn.mobilefirst.in";
 				Intent intentx = new Intent(Intent.ACTION_SEND);
 				intentx.setType("text/plain");
 				intentx.putExtra(Intent.EXTRA_TEXT, txtLuv);
@@ -1115,7 +1177,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			Intent whatsapp = new Intent(Intent.ACTION_SEND);
 			whatsapp.setPackage("com.whatsapp");
 			whatsapp.setType("text/plain");
-			whatsapp.putExtra(Intent.EXTRA_TEXT, "Can You Help Me With This");
+			whatsapp.putExtra(Intent.EXTRA_TEXT, "Can You Help Me With This\n-via ykn.mobilefirst.in ");
 			whatsapp.setType("image/*");
 			whatsapp.putExtra(Intent.EXTRA_STREAM, fileuri);
 

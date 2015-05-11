@@ -122,7 +122,7 @@ public class AdsActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 
-				String txtLuv = Details[x].toString();
+				String txtLuv = Details[x].toString()+"\n-via ykn.mobilefirst.in";
 				Intent intentx = new Intent(Intent.ACTION_SEND);
 				intentx.setType("text/plain");
 				intentx.putExtra(Intent.EXTRA_TEXT, txtLuv);

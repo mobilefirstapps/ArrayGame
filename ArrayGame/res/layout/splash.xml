@@ -18,12 +18,4 @@
         android:scaleType="fitXY"
         android:src="@drawable/ykn1" />
 
-    <ImageView
-        android:id="@+id/talwar"
-        android:layout_width="100dp"
-        android:layout_height="120dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/sowrd" />
-
 </RelativeLayout>

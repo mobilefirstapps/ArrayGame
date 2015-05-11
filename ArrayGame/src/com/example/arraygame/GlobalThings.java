@@ -4,6 +4,8 @@ import android.app.Application;
 import android.util.Log;
 
 public class GlobalThings extends Application {
+	
+	public static boolean music =true;
 
 	@Override
 	public void onLowMemory() {

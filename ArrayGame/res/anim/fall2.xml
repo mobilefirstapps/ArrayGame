@@ -12,11 +12,11 @@
         android:toXScale="1"
         android:toYScale="1" />
 
-    <translate
-        android:duration="1500"
-        android:fromYDelta="0%p"
-        android:interpolator="@android:anim/anticipate_overshoot_interpolator"
-        android:startOffset="3000"
-        android:toYDelta="120%p" />
+<!--     <translate -->
+<!--         android:duration="1500" -->
+<!--         android:fromYDelta="0%p" -->
+<!--         android:interpolator="@android:anim/anticipate_overshoot_interpolator" -->
+<!--         android:startOffset="3000" -->
+<!--         android:toYDelta="120%p" /> -->
 
 </set>
