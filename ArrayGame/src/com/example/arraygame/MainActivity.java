@@ -1049,7 +1049,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				doorbellDialog.show();
 				break;
 			case 302:
-				String txtLuv = "GOT fan?? You know nothing Challenge a Quiz of GOT http://kyn.mobilefirst.in";
+				String txtLuv = "GOT fan?? You know nothing Challenge a Quiz of GOT \n-via http://ykn.mobilefirst.in";
 				Intent intentx = new Intent(Intent.ACTION_SEND);
 				intentx.setType("text/plain");
 				intentx.putExtra(Intent.EXTRA_TEXT, txtLuv);
@@ -1288,8 +1288,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			file.delete();
 		} else {
 			file = new File(dir, "share.png");
-			Toast.makeText(MainActivity.this, "Redirecting to Twitter",
-					Toast.LENGTH_SHORT).show();
+		
 		}
 		try {
 			output = new FileOutputStream(file);

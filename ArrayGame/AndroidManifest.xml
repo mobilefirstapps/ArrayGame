@@ -71,6 +71,9 @@
             android:name=".LastScreen"
             android:label="@string/title_activity_last_screen" >
         </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="129bb52354f9e781b4dfe4341926632aa8371d52" />
     </application>
 
 </manifest>

@@ -5,5 +5,9 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry exported="true" kind="lib" path="kit-libs/com-crashlytics-sdk-android_answers_8/libs/com-crashlytics-sdk-android_answers-classes.jar"/>
+	<classpathentry exported="true" kind="lib" path="kit-libs/com-crashlytics-sdk-android_beta_8/libs/com-crashlytics-sdk-android_beta-classes.jar"/>
+	<classpathentry exported="true" kind="lib" path="kit-libs/com-crashlytics-sdk-android_crashlytics_8/libs/com-crashlytics-sdk-android_crashlytics-classes.jar"/>
+	<classpathentry exported="true" kind="lib" path="kit-libs/io-fabric-sdk-android_fabric_8/libs/io-fabric-sdk-android_fabric-classes.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
