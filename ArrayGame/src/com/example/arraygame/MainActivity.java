@@ -885,6 +885,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				} else {
 					mSpaceEncountered = true;
 					spacecount++;
+					mSpacecounter++;
 				}
 
 				text.setId(201 + i);
@@ -897,6 +898,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				} else {
 					if (mSpacecounter == 1) {
 						mSpacecounter = 0;
+						text.setVisibility(View.GONE);
 						ans2.addView(text);
 					} else {
 						text.setLayoutParams(params);
