@@ -1,9 +1,9 @@
 package com.special.ResideMenu;
 
 
-import com.example.arraygame.CustomFont;
-import com.example.arraygame.MainActivity;
-import com.example.arraygame.R;
+import com.mobilefirst.gameofthrones.quiz.CustomFont;
+import com.mobilefirst.gameofthrones.quiz.MainActivity;
+import com.mobilefirst.gameofthrones.quiz.R;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -48,7 +48,7 @@ public class ResideMenuItem extends LinearLayout{
 
     private void initViews(Context context){
         LayoutInflater inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(com.example.arraygame.R.layout.residemenu_item, this);
+        inflater.inflate(com.mobilefirst.gameofthrones.quiz.R.layout.residemenu_item, this);
         iv_icon = (ImageView) findViewById(R.id.iv_icon);
         tv_title = (TextView) findViewById(R.id.tv_title);
 		got = CustomFont.getTypeface(context, CustomFont.APP_FONT);
