@@ -20,7 +20,7 @@ public class GlobalThings extends Application {
 	static String[] ImageEasy = {
 			"https://lh5.googleusercontent.com/FArY_Me0sFfd72Vs5u8QJXRMLP7jRqHZ2KxqiaiaGw=w636-h720-no",
 			"https://lh3.googleusercontent.com/uJTRl_UU1mTLB_s1gKj-_7meAYKvEUd8rRBQIuSQQg=w499-h750-no",
-			"https://lh3.googleusercontent.com/9blqk0HhXGTa9DevQR289XWMC7wml94MAnqrWSnkKe8=w215-h330-p-no",
+			"https://lh3.googleusercontent.com/qdWrQLfs18WKz_9LR22HCKMCS3MhVGR5WoWweFMLD9E=w380-h213-p-no",
 			"https://lh4.googleusercontent.com/gwt4OlJ_JuE-jX5Pk41kt70PwQDvz6flzBcL1SyyyQ=w608-h829-no",
 			"https://lh5.googleusercontent.com/fcFiUZRGzS-dhz-J1U152diCafPkVD00C9VXAnvr6E0=w640-h426-no",
 			"https://lh5.googleusercontent.com/g6oJWwi9MeIur66M69WB6pe40Dt_8Fmm4KEvw-SS9mw=w300-h450-no",

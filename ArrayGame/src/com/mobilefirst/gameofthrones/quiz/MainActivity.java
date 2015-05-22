@@ -84,18 +84,15 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.onResume();
 		// Logs 'install' and 'app activate' App Events.
 		AppEventsLogger.activateApp(this);
-		
-		if(GlobalThings.music)
-		{
+
+		if (GlobalThings.music) {
 			Intent intentx = new Intent(MainActivity.this, serv.class);
 			MainActivity.this.startService(intentx);
-		}
-		else
-		{
+		} else {
 			Intent intentx = new Intent(MainActivity.this, serv.class);
 			MainActivity.this.stopService(intentx);
 		}
-		
+
 	}
 
 	@Override
@@ -194,7 +191,8 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	static int posted = 0;
 
-	@SuppressLint({ "InlinedApi", "NewApi" }) @Override
+	@SuppressLint({ "InlinedApi", "NewApi" })
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
@@ -265,25 +263,23 @@ public class MainActivity extends Activity implements OnClickListener {
 		shared = MainActivity.this.getSharedPreferences("game",
 				Context.MODE_PRIVATE);
 		editor = shared.edit();
-		
-		if(shared.getBoolean("volume", true))
-		{
-			GlobalThings.music=true;
+
+		if (shared.getBoolean("volume", true)) {
+			GlobalThings.music = true;
 			volume.setImageResource(R.drawable.volumeon);
-		}
-		else
-		{			GlobalThings.music=false;
+		} else {
+			GlobalThings.music = false;
 
 			volume.setImageResource(R.drawable.volumeoff);
 		}
-		
+
 		smallTextSize = (int) getResources().getDimension(
 				R.dimen.quote_small_size);
 		quoteTextSize = (int) getResources().getDimension(
 				R.dimen.quote_text_size);
 		mLinearLayout = (RelativeLayout) findViewById(R.id.background);
 		mMasterArray = new ArrayList<EasyBean>();
-		
+
 		menu = (ImageView) findViewById(R.id.expanded_menu);
 		image = (ImageView) findViewById(R.id.image);
 		loading = (ImageView) findViewById(R.id.loading);
@@ -342,33 +338,29 @@ public class MainActivity extends Activity implements OnClickListener {
 		});
 
 		levelchanger();
-		
-		
+
 		volume.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				
-				if(GlobalThings.music)
-				{
+
+				if (GlobalThings.music) {
 					volume.setImageResource(R.drawable.volumeoff);
-					GlobalThings.music =false;
+					GlobalThings.music = false;
 					editor.putBoolean("volume", GlobalThings.music);
 					editor.commit();
 					Intent intentx = new Intent(MainActivity.this, serv.class);
 					MainActivity.this.stopService(intentx);
-				}
-				else
-				{
+				} else {
 					volume.setImageResource(R.drawable.volumeon);
 					Intent intentx = new Intent(MainActivity.this, serv.class);
 					MainActivity.this.startService(intentx);
-					GlobalThings.music =true;
+					GlobalThings.music = true;
 					editor.putBoolean("volume", GlobalThings.music);
 					editor.commit();
 				}
-				
+
 			}
 		});
 
@@ -709,9 +701,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		String apiKey = "FByPCR3rXTVEnMbtbZlpr1crsQb2uro4R46O2q0nWnE1ZFggVZ0iMM7PDjFBRyJr";
 		doorbellDialog = new Doorbell(this, appId, apiKey);
 
-		doorbellDialog.setEmail("mobilefirstapps@gmail.com"); // Prepopulate the
-																// email address
-																// field
+		// doorbellDialog.setEmail("mobilefirstapps@gmail.com"); // Prepopulate
+		// the
+		// email address
+		// field
 		// Set the name of the user (if known)
 		doorbellDialog.addProperty("loggedIn", true); // Optionally add some
 														// properties
@@ -722,23 +715,20 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	}
 
-	@TargetApi(Build.VERSION_CODES.HONEYCOMB) private void levelchanger() {
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+	private void levelchanger() {
 
 		isOnline();
 
 		if (isInternetPresent) {
-			
-			if(shared.getBoolean("volume", true))
-			{
+
+			if (shared.getBoolean("volume", true)) {
 				Intent intent = new Intent(MainActivity.this, serv.class);
 				MainActivity.this.startService(intent);
-			}
-			else
-			{
+			} else {
 				Intent intent = new Intent(MainActivity.this, serv.class);
 				MainActivity.this.stopService(intent);
 			}
-			
 
 			int mSpacecounter = 0;
 			mHint.setEnabled(true);
@@ -794,7 +784,6 @@ public class MainActivity extends Activity implements OnClickListener {
 					sharedprefbuilt = false;
 				}
 			}
-
 			if (level == 88) {
 				Intent intentx = new Intent(MainActivity.this, LastScreen.class);
 				startActivity(intentx);
@@ -1179,7 +1168,8 @@ public class MainActivity extends Activity implements OnClickListener {
 			Intent whatsapp = new Intent(Intent.ACTION_SEND);
 			whatsapp.setPackage("com.whatsapp");
 			whatsapp.setType("text/plain");
-			whatsapp.putExtra(Intent.EXTRA_TEXT, "Can You Help Me With This\n-via ykn.mobilefirst.in ");
+			whatsapp.putExtra(Intent.EXTRA_TEXT,
+					"Can You Help Me With This\n-via ykn.mobilefirst.in ");
 			whatsapp.setType("image/*");
 			whatsapp.putExtra(Intent.EXTRA_STREAM, fileuri);
 
@@ -1290,7 +1280,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			file.delete();
 		} else {
 			file = new File(dir, "share.png");
-		
+
 		}
 		try {
 			output = new FileOutputStream(file);
