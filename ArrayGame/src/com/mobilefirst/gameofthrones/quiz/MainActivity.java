@@ -244,8 +244,11 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 
 		setContentView(R.layout.activity_main);
-		getWindow().getDecorView().setSystemUiVisibility(
-				View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+		
+			getWindow().getDecorView().setSystemUiVisibility(
+					View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+		
+		
 
 		canPresentShareDialogWithPhotos = ShareDialog
 				.canShow(SharePhotoContent.class);
